@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.9-preview" />
+  <PropertyGroup>
+    <Name>minpro_ecommerce</Name>
+    <ProjectGuid>{4EE86E1E-19D9-43A5-B87D-215FB63E8E6F}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
+  </Target>
+</Project>

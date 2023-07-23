@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "localhost",
+            "username": "postgres",
+            "password": "Abikbaik1*",
+            "database": "postgres"
+        }
+    ],
+    "dataworkspace.excludedProjects": [
+        "minpro_ecommerce/minpro_ecommerce.sqlproj"
+    ]
+}
