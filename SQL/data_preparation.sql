@@ -10,7 +10,7 @@ CREATE TABLE customers (
 import csv 
 COPY customers(customer_id, customer_unique_id, customer_zip_code_prefix, customer_city, customer_state) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/customers_dataset.csv' DELIMITER ',' CSV HEADER;
 
-check customers tabel
+check customers 
 select * from customers;
 
 --------------------------------------------
@@ -28,7 +28,7 @@ CREATE TABLE geolocation (
 import csv
 COPY geolocation (geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/geolocation_dataset.csv' DELIMITER ',' CSV HEADER;
 
-check geolocation tabel
+check geolocation 
 select * from geolocation;
 
 --------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE order_items (
 import CSV
 COPY order_items(order_id,order_item_id,product_id,seller_id,shipping_limit_date,price,freight_value) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/order_items_dataset.csv' DELIMITER ',' CSV HEADER ;
 
-check order_items tabel
+check order_items 
 SELECT * FROM order_items;
 
 set PRIMARY KEY
@@ -87,7 +87,7 @@ CREATE TABLE order_reviews(
 import CSV
 COPY order_reviews(review_id,order_id,review_score,review_comment_title,review_comment_message,review_creation_date,review_answer_timestamp) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/order_reviews_dataset.csv' DELIMITER ',' CSV HEADER ;
 
-check order_reviews tabel
+check order_reviews
 SELECT * FROM order_reviews;
 
 set PRIMARY KEY
@@ -108,7 +108,7 @@ CREATE TABLE orders(
 import CSV
 COPY orders(order_id,customer_id,order_status,order_purchase_timestamp,order_approved_at,order_delivered_carrier_date,order_delivered_customer_date,order_estimated_delivery_date) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/orders_dataset.csv' DELIMITER ',' CSV HEADER ;
 
-check orders tabel
+check orders 
 SELECT * FROM orders;
 
 set PRIMARY KEY
@@ -119,8 +119,8 @@ CREATE TABLE product(
     column1 INT NULL,
     product_id VARCHAR,
     product_category_name VARCHAR,
-    product_name_lenght FLOAT,
-    product_description_lenght FLOAT,
+    product_name_length FLOAT,
+    product_description_length FLOAT,
     product_photos_qty FLOAT,
     product_weight_g FLOAT,
     product_length_cm FLOAT,
@@ -131,9 +131,9 @@ CREATE TABLE product(
 )
 
 import CSV
-COPY product( column1,product_id,product_category_name,product_name_lenght,product_description_lenght,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm) FROM'/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/product_dataset.csv' DELIMITER ',' CSV HEADER;
+COPY product( column1,product_id,product_category_name,product_name_length,product_description_length,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm) FROM'/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/product_dataset.csv' DELIMITER ',' CSV HEADER;
 
-check product tabel
+check product 
 SELECT * FROM product;
 
 ----------------------------------------
@@ -148,7 +148,7 @@ CREATE TABLE sellers(
 import CSV
 COPY sellers(seller_id,seller_zip_code_prefix,seller_city,seller_state) FROM '/Users/masendhy/Documents/rakamin/mini project/1. Analyzing eCommerce Business Performance with SQL/Analyzing_eCommerce_Business_Performance_with_SQL/dataset/sellers_dataset.csv'    DELIMITER ',' CSV HEADER;
 
-check sellers tabel
+check sellers 
 SELECT * FROM sellers;
 
 set PRIMARY KEY
