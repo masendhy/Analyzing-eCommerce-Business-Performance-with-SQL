@@ -1,4 +1,13 @@
 -- Active: 1690037820527@@127.0.0.1@5432@minpro_ecommerce@public
+
+-- Data Preparation
+
+-- 1. Create Database --
+-- CREATE DATABASE minpro_ecommerce;
+
+-- 2. Create Tables --
+
+-- === Tabel Customers === -- 
 CREATE TABLE customers (
     customer_id VARCHAR PRIMARY KEY,
     customer_unique_id VARCHAR(255),
@@ -13,7 +22,7 @@ COPY customers(customer_id, customer_unique_id, customer_zip_code_prefix, custom
 check customers 
 select * from customers;
 
---------------------------------------------
+-- === Tabel Geolocation === --
 
 CREATE TABLE geolocation (
     geolocation_id SERIAL PRIMARY KEY,
@@ -31,7 +40,7 @@ COPY geolocation (geolocation_zip_code_prefix, geolocation_lat, geolocation_lng,
 check geolocation 
 select * from geolocation;
 
---------------------------------------------
+-- === Tabel Order Items === --
 
 CREATE TABLE order_items (
     order_id VARCHAR ,
@@ -53,7 +62,8 @@ SELECT * FROM order_items;
 set PRIMARY KEY
 ALTER TABLE order_items ADD PRIMARY KEY (order_id,order_item_id);
 
-------------------------------------------
+-- === Tabel Order Payments === --
+
 CREATE TABLE order_payments (
     order_id VARCHAR ,
     payment_sequential INTEGER,
@@ -72,7 +82,8 @@ SELECT * FROM order_payments;
 set PRIMARY KEY
 ALTER TABLE order_payments ADD PRIMARY KEY (order_id,payment_sequential);
 
-----------------------------------------
+-- === Tabel Order Reviews === --
+
 CREATE TABLE order_reviews(
     review_id VARCHAR(50),
     order_id VARCHAR(50),
@@ -93,7 +104,8 @@ SELECT * FROM order_reviews;
 set PRIMARY KEY
 ALTER TABLE order_reviews ADD PRIMARY KEY (review_id,order_id);
 
-----------------------------------------
+-- === Tabel Orders === --
+
 CREATE TABLE orders(
     order_id VARCHAR,
     customer_id VARCHAR,
@@ -114,7 +126,8 @@ SELECT * FROM orders;
 set PRIMARY KEY
 ALTER TABLE orders ADD PRIMARY KEY (order_id);
 
-----------------------------------------
+-- === Tabel Products === --
+
 CREATE TABLE product(
     column1 INT NULL,
     product_id VARCHAR,
@@ -136,7 +149,9 @@ COPY product( column1,product_id,product_category_name,product_name_length,produ
 check product 
 SELECT * FROM product;
 
-----------------------------------------
+
+-- === Tabel Sellers === --
+
 CREATE TABLE sellers(
     seller_id VARCHAR,
     seller_zip_code_prefix INTEGER,
