@@ -167,3 +167,23 @@ LEFT JOIN top_product_category on total_order_revenue.year = top_product_categor
 LEFT JOIN total_canceled_order on total_order_revenue.year = total_canceled_order.year
 LEFT JOIN most_canceled_category on total_order_revenue.year = most_canceled_category.year
 GROUP BY 1,2,3,4,5,6;
+
+--create that table
+
+DROP TABLE IF EXISTS product_category_quality;
+CREATE TABLE product_category_quality AS
+SELECT
+    total_order_revenue.year as year,
+    total_order_revenue.total_order_revenue as total_revenue,
+    top_product_category.top_category as top_category,
+    total_canceled_order.total_canceled_order as total_canceled,
+    most_canceled_category.most_canceled as top_canceled_product,
+    most_canceled_category.total_canceled_order as total_canceled_order
+FROM total_order_revenue
+LEFT JOIN top_product_category on total_order_revenue.year = top_product_category.year
+LEFT JOIN total_canceled_order on total_order_revenue.year = total_canceled_order.year
+LEFT JOIN most_canceled_category on total_order_revenue.year = most_canceled_category.year
+GROUP BY 1,2,3,4,5,6;
+
+--check the table
+select * from product_category_quality;
