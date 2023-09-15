@@ -52,12 +52,11 @@ with table21 as (
     SELECT orders.order_id, orders.order_status, orders.order_purchase_timestamp,
     extract(year from order_purchase_timestamp) as year
     FROM orders
-    left join order_items on orders.order_id = order_items.order_id
-    WHERE orders.order_status = 'canceled'
+    WHERE orders.order_status in ('canceled')
 ),
 table22 as (
     SELECT YEAR,
-    count(order_status) as total_canceled_order
+    count(order_id) as total_canceled_order
     FROM table21
     GROUP BY 1
 )
@@ -65,3 +64,15 @@ SELECT year, total_canceled_order
 FROM table22
 ORDER BY 1
 ;
+
+--3. Membuat tabel yang berisi nama kategori produk yang memberikan pendapatan total tertinggi untuk masing-masing tahun 
+--(Hint: Perhatikan penggunaan window function dan juga filtering yang dilakukan)
+
+
+
+
+
+
+
+
+
